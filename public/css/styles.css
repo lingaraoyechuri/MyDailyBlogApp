@@ -1,0 +1,57 @@
+
+.container-fluid{
+      padding-top: 3%;
+      padding-bottom: 3%;
+      padding-left: 15%;
+      padding-right: 15%;
+}
+
+
+.container{
+      padding-top: 10%;
+      padding-bottom: 3%;
+      padding-left: 2%;
+      padding-right: 15%;
+}
+
+.container1 {
+
+    line-height: 2;
+    padding-top: 25px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.copy-right{
+      color: #EAF6F6;
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 0px;
+}
+
+.text{
+    margin-top: 250px;
+    margin-right: 250px;
+    margin-left: 300px;
+
+}
+
+.box1{
+  max-width: 400px;
+  margin: 50px auto;
+  margin-top: 150px;
+}
+
+
+.box{
+  max-width: 400px;
+  margin: 50px auto;
+}
