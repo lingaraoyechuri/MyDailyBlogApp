@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyparser = require('body-parser');
+var _ = require('lodash');
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyparser.urlencoded({extended: true}));
@@ -23,7 +24,12 @@ app.get('/Home', (req, res) => {
   console.log("testing");
   //console.log(blogList);
   //console.log("it is list"+ list[0]);
-  res.render("home", {title:titleList, message:messageList});
+  var trimmedmessageList = [];
+  for(var i = 0; i<titleList.length; i++){
+    var trimmedmessage =  messageList[i].substring(0,100);
+    trimmedmessageList.push(trimmedmessage);
+  }
+  res.render("home", {title:titleList, message:trimmedmessageList});
 
 });
 
@@ -45,6 +51,30 @@ app.get('/Compose', (req, res) => {
   //  let day = date1();
   console.log("testing compose");
   res.render("Compose");
+
+});
+
+app.get('/:post', (req, res) => {
+  //  let day = date1();
+  console.log(req.params);
+  var currentPath = req.params.post;
+  var currentPath1 = _.lowerCase(currentPath);
+  console.log("currentPath1"+currentPath1);
+  console.log(currentPath1);
+  for(var i = 0; i<titleList.length; i++){
+       console.log(i);
+       console.log(titleList[i]);
+       var currentTitle = _.lowerCase(titleList[i]);
+       console.log("currentTitle"+ currentTitle);
+      if(currentTitle === currentPath1){
+        res.render("posts", {title:titleList[i], message:messageList[i]});
+        console.log("Match Found!");
+      }else {
+        console.log("Match Not Found!");
+      }
+  }
+  //res.send(req.params.post);
+//
 
 });
 

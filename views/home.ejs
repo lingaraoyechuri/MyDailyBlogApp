@@ -1,16 +1,16 @@
 
    <%- include("header") -%>
-   <div class="container">
          <h1>Home</h1>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <% console.log('heheeh') %>
-        <%for(var i = 0; i<=title.length; i++){%>
-          <% console.log('test') %>
-           <h1><%=title[i]%></h1>
-           <p><%=message[i]%></p>
-        <% } %>
+        <%if(title.length>0){%>
+          <%for(var i = 0; i<=title.length; i++){%>
+            <% console.log('test') %>
 
+             <h1><%=title[i]%></h1>
+             <p><%=message[i]%>...<a href="http://localhost:3000/<%=title[i]%>">Read more</a></p>
 
+          <% } %>
+        <%}%>
 
-   </div>
   <%- include("footer") -%>
